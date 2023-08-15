@@ -22,6 +22,7 @@ body {
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --dairy: #fcfcfc;
 }
 .logo {
   font-family: Raleway;
@@ -471,4 +472,61 @@ img {
 .customers-icons:focus {
   border-color: var(--link-active);
   fill: var(--link-active);
+}
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background-color: hsla(237, 18%, 22%, 0.4);
+  opacity: 100%;
+  transition: opacity var(--animation);
+}
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.modal-body {
+  position: relative;
+  margin-top: 80px;
+  width: 408px;
+  height: 584px;
+  border-radius: 4px;
+  background-color: var(--dairy);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  scale: 1;
+  transition: scale var(--animation);
+}
+.modal-button-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  fill: var(--dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color var(--animation), border var(--animation),
+    fill var(--animation);
+}
+.modal-button-close:hover,
+.modal-button-close:focus {
+  background-color: var(--link-active);
+  fill: var(--white);
+  border: 1px solid var(--link-active);
+}
+.is-hidden .modal-body {
+  scale: 0;
+}
+.modal:not(.is-hidden) .modal-body {
+  scale: 1;
 }
