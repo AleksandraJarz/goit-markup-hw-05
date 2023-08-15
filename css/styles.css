@@ -87,7 +87,7 @@ body {
   border-radius: 2px;
   background-color: var(--link-active);
   position: absolute;
-  bottom: -27.5px;
+  bottom: -28.5px;
   content: "";
 }
 
@@ -373,7 +373,8 @@ footer {
   border-radius: 0px 0px 4px 4px;
 }
 .section {
-  padding: 120px 0px;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 img {
   display: block;
